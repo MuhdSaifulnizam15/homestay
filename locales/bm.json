@@ -1,6 +1,12 @@
 {
-  "nav.home": "Laman Utama",
-  "language.en": "English",
-  "language.bm": "Bahasa Melayu",
-  "language.ch": "Chinese"
+  "header": {
+    "title": "Laman Cik De"
+  },
+  "home": {
+    "title": "Rasai penginapan di homestay kami"
+  },
+  "footer": {
+    "copyright": "Hak Cipta Terpelihara",
+    "name": "Laman Cik De"
+  }
 }

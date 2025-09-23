@@ -2,6 +2,9 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { hasEnvVars } from "../utils";
 
+const SUPPORTED_LOCALES = ["en", "bm", "cn"];
+const DEFAULT_LOCALE = "en";
+
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request,
@@ -47,21 +50,25 @@ export async function updateSession(request: NextRequest) {
   const { data } = await supabase.auth.getClaims();
   const user = data?.claims;
 
-  // 
-  const publicPaths = ["/", "/home", "/calendar"];
-  const isPublic = publicPaths.some((path) =>
-    request.nextUrl.pathname.startsWith(path)
-  );
+  const { pathname } = request.nextUrl;
 
-  if (
-    !user &&
-    !isPublic &&
-    !request.nextUrl.pathname.startsWith("/login") &&
-    !request.nextUrl.pathname.startsWith("/auth")
-  ) {
-    // no user, potentially respond by redirecting the user to the login page
+  // Admin routes: always protected, no locale
+  if (pathname.startsWith("/admin")) {
+    if (!user) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/auth/login";
+      return NextResponse.redirect(url);
+    }
+    return supabaseResponse;
+  }
+
+  // Public routes: must start with locale
+  const segments = pathname.split("/").filter(Boolean);
+  const locale = segments[0];
+
+  if (!SUPPORTED_LOCALES.includes(locale)) {
     const url = request.nextUrl.clone();
-    url.pathname = "/auth/login";
+    url.pathname = `/${DEFAULT_LOCALE}${pathname === "/" ? "" : pathname}`;
     return NextResponse.redirect(url);
   }
 

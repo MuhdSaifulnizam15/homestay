@@ -4,7 +4,7 @@
 </a>
 
 <p align="center">
- Homestay Laman Cik De
+ The fastest way to build apps with Next.js and Supabase
 </p>
 
 <p align="center">
