@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-import SampleImg from "../../assets/images/sample.jpg"
+import SampleImg from "../../public/images/sample.jpg"
 
 const Hero = ({ locale = "en" }: { locale: string }) => {
     return (
