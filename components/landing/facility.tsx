@@ -6,7 +6,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 
 const Facility = ({ locale }: { locale: Locale }) => {
   return (
-    <section className="w-full py-8 px-4 md:px-8 lg:px-16">
+    <section className="w-full py-8 px-4 md:px-8 lg:px-16" id="facilities">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
           Facilities

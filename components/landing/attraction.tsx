@@ -25,7 +25,7 @@ const Attraction = () => {
     setCurrentIndex((i) => (i - 1 + images.length) % images.length);
 
   return (
-    <section className="py-16 px-6 bg-muted/30">
+    <section className="py-16 px-6 bg-muted/30" id="attractions">
       <h2 className="text-3xl font-bold mb-8 text-center">Nearby Attractions</h2>
       <div className="w-full max-w-4xl mx-auto">
         <Accordion.Root
