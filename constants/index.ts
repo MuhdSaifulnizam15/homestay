@@ -257,79 +257,124 @@ export const FAQS_BY_CATEGORY = [
 
 export const FACILITIES = [
   {
-    name: "Wi-Fi",
+    name: { en: "Wi-Fi", ms: "Wi-Fi" },
     icon: Wifi,
-    description: "High-speed internet throughout the homestay.",
+    description: {
+      en: "High-speed internet throughout the homestay.",
+      ms: "Internet berkelajuan tinggi di seluruh homestay.",
+    },
   },
   {
-    name: "Swimming Pool",
+    name: { en: "Swimming Pool", ms: "Kolam Renang" },
     icon: WavesLadder,
-    description: "Outdoor pool, subject to availability and extra charges.",
+    description: {
+      en: "Outdoor pool, subject to availability and extra charges.",
+      ms: "Kolam renang luar, tertakluk pada ketersediaan dan caj tambahan.",
+    },
   },
   {
-    name: "BBQ Area",
+    name: { en: "BBQ Area", ms: "Ruang BBQ" },
     icon: Flame,
-    description: "BBQ is allowed in the outdoor designated area.",
+    description: {
+      en: "BBQ is allowed in the outdoor designated area.",
+      ms: "BBQ dibenarkan di kawasan luar yang disediakan.",
+    },
   },
   {
-    name: "Aircond",
+    name: { en: "Aircond", ms: "Penyaman Udara" },
     icon: Snowflake,
-    description: "All bedrooms are equipped with air-conditioning.",
+    description: {
+      en: "All bedrooms are equipped with air-conditioning.",
+      ms: "Semua bilik tidur dilengkapi dengan penyaman udara.",
+    },
   },
   {
-    name: "Kitchen",
+    name: { en: "Kitchen", ms: "Dapur" },
     icon: HomeIcon,
-    description: "Basic kitchen utensils and appliances available.",
+    description: {
+      en: "Basic kitchen utensils and appliances available.",
+      ms: "Peralatan dapur asas dan perkakas disediakan.",
+    },
   },
   {
-    name: "Laundry",
+    name: { en: "Laundry", ms: "Dobi" },
     icon: WashingMachine,
-    description: "Washing machine is available for guest use.",
+    description: {
+      en: "Washing machine is available for guest use.",
+      ms: "Mesin basuh disediakan untuk kegunaan tetamu.",
+    },
   },
   {
-    name: "Parking",
+    name: { en: "Parking", ms: "Parkir" },
     icon: SquareParking,
-    description: "Free parking available at the premises.",
+    description: {
+      en: "Free parking available at the premises.",
+      ms: "Parkir percuma disediakan di premis.",
+    },
   },
   {
-    name: "TV",
+    name: { en: "TV", ms: "Televisyen" },
     icon: VideoIcon,
-    description: "TV with basic channels provided in the living room.",
+    description: {
+      en: "TV with basic channels provided in the living room.",
+      ms: "TV dengan saluran asas disediakan di ruang tamu.",
+    },
   },
   {
-    name: "CCTV",
+    name: { en: "CCTV", ms: "Kamera Litar Tertutup" },
     icon: CameraIcon,
-    description: "Outdoor CCTV for monitoring and safety.",
+    description: {
+      en: "Outdoor CCTV for monitoring and safety.",
+      ms: "CCTV luar untuk pemantauan dan keselamatan.",
+    },
   },
   {
-    name: "Water Heater",
+    name: { en: "Water Heater", ms: "Pemanas Air" },
     icon: LightningBoltIcon,
-    description: "Hot shower available in all bathrooms.",
+    description: {
+      en: "Hot shower available in all bathrooms.",
+      ms: "Pancuran air panas tersedia di semua bilik mandi.",
+    },
   },
   {
-    name: "Iron",
+    name: { en: "Iron", ms: "Seterika" },
     icon: PersonIcon, // closest Radix option
-    description: "Iron and ironing board provided for guest use.",
+    description: {
+      en: "Iron and ironing board provided for guest use.",
+      ms: "Seterika dan papan seterika disediakan untuk kegunaan tetamu.",
+    },
   },
   {
-    name: "Prayer Mat",
+    name: { en: "Prayer Mat", ms: "Sejadah" },
     icon: GlobeIcon, // placeholder for sejadah
-    description: "Prayer mats are available for Muslim guests.",
+    description: {
+      en: "Prayer mats are available for Muslim guests.",
+      ms: "Sejadah disediakan untuk tetamu Muslim.",
+    },
   },
   {
-    name: "Private Gate",
+    name: { en: "Private Gate", ms: "Pagar Persendirian" },
     icon: LockClosedIcon,
-    description: "Gated entrance for extra privacy and safety.",
+    description: {
+      en: "Gated entrance for extra privacy and safety.",
+      ms: "Pintu masuk berpagar untuk privasi dan keselamatan tambahan.",
+    },
   },
   {
-    name: "Water Dispenser",
+    name: { en: "Water Dispenser", ms: "Dispenser Air" },
     icon: GlassWater,
-    description: "Hot and cold water dispenser provided.",
+    description: {
+      en: "Hot and cold water dispenser provided.",
+      ms: "Dispenser air panas dan sejuk disediakan.",
+    },
   },
   {
-    name: "Outdoor Seating",
+    name: { en: "Outdoor Seating", ms: "Tempat Duduk Luar" },
     icon: RowsIcon,
-    description: "Outdoor seating area available for BBQ and gatherings.",
+    description: {
+      en: "Outdoor seating area available for BBQ and gatherings.",
+      ms: "Tempat duduk luar disediakan untuk BBQ dan perhimpunan.",
+    },
   },
 ];
 

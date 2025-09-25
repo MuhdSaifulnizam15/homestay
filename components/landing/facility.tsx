@@ -1,25 +1,47 @@
+"use client";
 
-const Facility = () => {
-  const facilities = [
-    { title: "Air Conditioning", desc: "Stay cool and comfortable" },
-    { title: "Wi-Fi", desc: "High-speed internet throughout" },
-    { title: "Kitchen", desc: "Fully equipped for cooking" },
-    { title: "Parking", desc: "Secure private parking space" },
-  ];
+import { FACILITIES } from "@/constants";
+import { Locale } from "@/types";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
+const Facility = ({ locale }: { locale: Locale }) => {
   return (
-    <section id="facilities" className="py-6 px-6 bg-background">
-      <h2 className="text-3xl font-bold mb-8 text-center">Facilities</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {facilities.map((f, idx) => (
-          <div
-            key={idx}
-            className="rounded-xl border bg-card p-6 shadow-sm hover:shadow-md transition"
-          >
-            <h3 className="font-semibold">{f.title}</h3>
-            <p className="text-sm text-muted-foreground mt-2">{f.desc}</p>
-          </div>
-        ))}
+    <section className="w-full py-8 px-4 md:px-8 lg:px-16">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+          Facilities
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          {FACILITIES.map((facility, i) => {
+            const Icon = facility.icon;
+            return (
+              <Tooltip.Provider key={i} delayDuration={150}>
+                <Tooltip.Root>
+                  {/* Trigger */}
+                  <Tooltip.Trigger asChild>
+                    <div className="flex flex-col items-center text-center rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-md p-4 transition hover:shadow-lg cursor-default">
+                      <Icon className="h-8 w-8 mb-2 text-primary" />
+                      <span className="font-medium text-sm">{facility.name[locale]}</span>
+                      {/* Show description inline only on desktop */}
+                      <span className="hidden lg:block text-xs text-neutral-500 mt-1">
+                        {facility.description[locale]}
+                      </span>
+                    </div>
+                  </Tooltip.Trigger>
+
+                  {/* Tooltip content for mobile/tablet */}
+                  <Tooltip.Content
+                    side="top"
+                    className="lg:hidden rounded-md bg-neutral-800 text-white px-3 py-2 text-xs shadow-lg"
+                  >
+                    {facility.description[locale]}
+                    <Tooltip.Arrow className="fill-neutral-800" />
+                  </Tooltip.Content>
+                </Tooltip.Root>
+              </Tooltip.Provider>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

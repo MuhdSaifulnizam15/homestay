@@ -25,7 +25,7 @@ export default async function Home({
           <Hero locale={locale} />
           
           <main className="flex-1 flex flex-col px-4">
-            <Facility />
+            <Facility locale={locale} />
             <Attraction />
             <Testimonial />
             <Faq locale={locale} />
