@@ -11,3 +11,5 @@ export type AttractionCategory = {
   category: string;
   items: Attraction[];
 };
+
+export type Locale = "en" | "ms";

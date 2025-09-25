@@ -8,11 +8,10 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { SUPPORTED_LOCALES } from "@/constants";
 // import { Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const SUPPORTED_LOCALES = ["en", "bm", "cn"];
 
 const LanguageSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -57,7 +56,7 @@ const LanguageSwitcher = () => {
           onValueChange={(locale) => handleChange(locale)}
         >
           <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="bm">Bahasa Melayu</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="ms">Bahasa Melayu</DropdownMenuRadioItem>
           {/* <DropdownMenuRadioItem value="cn">中文</DropdownMenuRadioItem> */}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>

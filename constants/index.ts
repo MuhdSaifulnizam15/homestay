@@ -19,6 +19,9 @@ import {
   Wifi
 } from "lucide-react";
 
+export const SUPPORTED_LOCALES = ["en", "ms", "cn"];
+export const DEFAULT_LOCALE = "en";
+
 export const HOLIDAYS = [
   // Public Holidays 2025
   { date: '2025-04-26', type: 'public', name: { en: "Sultan of Terengganu's Birthday", ms: "Hari Keputeraan Sultan Terengganu" } },

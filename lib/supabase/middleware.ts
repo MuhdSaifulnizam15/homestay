@@ -1,9 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { hasEnvVars } from "../utils";
-
-const SUPPORTED_LOCALES = ["en", "bm", "cn"];
-const DEFAULT_LOCALE = "en";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "@/constants";
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({

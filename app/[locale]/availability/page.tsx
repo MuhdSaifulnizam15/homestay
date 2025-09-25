@@ -2,11 +2,12 @@ import { Header } from "@/components/landing/header"
 import { getLocale } from "../locales"
 import { Footer } from "@/components/landing/footer"
 import { Calendar } from "@/components/calendar"
+import { Locale } from "@/types"
 
 export default async function Availability({
   params,
 }: {
-  params: Promise<{ locale: 'en' | 'bm' }>
+  params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
   const translation = await getLocale(locale) // en

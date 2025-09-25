@@ -6,11 +6,12 @@ import { Facility } from "@/components/landing/facility";
 import { Attraction } from "@/components/landing/attraction";
 import { Testimonial } from "@/components/landing/testimonial";
 import { Faq } from "@/components/landing/faq";
+import { Locale } from "@/types";
 
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: 'en' | 'bm' }>
+  params: Promise<{ locale: Locale }>
 }) {
   const { locale } = await params
   const translation = await getLocale(locale) // en
@@ -27,7 +28,7 @@ export default async function Home({
             <Facility />
             <Attraction />
             <Testimonial />
-            <Faq />
+            <Faq locale={locale} />
           </main>
         </div>
 
