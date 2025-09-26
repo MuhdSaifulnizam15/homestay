@@ -6,6 +6,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
 import { ATTRACTIONS } from "@/constants";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const Attraction = () => {
   const [open, setOpen] = useState(false);
@@ -102,15 +103,13 @@ const Attraction = () => {
                        w-[92vw] max-w-5xl h-[82vh] bg-transparent outline-none"
               aria-label="Image gallery"
             >
+              <VisuallyHidden.Root>
+                <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
+                <Dialog.Description className="DialogDescription">
+                  Dialog Description
+                </Dialog.Description>
+              </VisuallyHidden.Root>
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* Close button */}
-                <button
-                  onClick={() => setOpen(false)}
-                  className="absolute top-8 right-0 bg-black/50 p-2 text-white z-50"
-                >
-                  <X size={20} />
-                </button>
-
                 {/* Prev */}
                 {images.length > 1 && (
                   <button
@@ -143,6 +142,16 @@ const Attraction = () => {
                   </button>
                 )}
               </div>
+
+              <Dialog.Close asChild>
+                <button
+                  className="absolute top-8 right-0 bg-black/50 p-2 text-white z-50"
+                  aria-label="Close" 
+                  onClick={() => setOpen(false)}
+                >
+                  <X />
+                </button>
+              </Dialog.Close>
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
