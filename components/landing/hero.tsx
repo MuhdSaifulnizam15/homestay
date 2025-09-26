@@ -11,17 +11,17 @@ import { Button } from "../ui/button";
 
 // Sample images – replace with your own
 const IMAGES = [
-  { src: "/images/attractions/perhentian1.jpg", alt: "Living Room" },
-  { src: "/images/attractions/perhentian2.jpg", alt: "Bedroom" },
-  { src: "/images/attractions/perhentian3.jpg", alt: "Kitchen" },
-  { src: "/images/attractions/lata_tembakah1.jpg", alt: "Pool" },
-  { src: "/images/attractions/lata_tembakah2.jpg", alt: "Garden" },
-  { src: "/images/attractions/perhentian1.jpg", alt: "Living Room" },
-  { src: "/images/attractions/perhentian2.jpg", alt: "Bedroom" },
-  { src: "/images/attractions/perhentian3.jpg", alt: "Kitchen" },
-  { src: "/images/attractions/lata_tembakah1.jpg", alt: "Pool" },
-  { src: "/images/attractions/lata_tembakah2.jpg", alt: "Garden" },
-  { src: "/images/attractions/perhentian1.jpg", alt: "Living Room" },
+  { src: "/images/facility/facility1.jpg", alt: "Facility" },
+  { src: "/images/facility/facility2.jpg", alt: "Facility" },
+  { src: "/images/facility/facility3.jpg", alt: "Facility" },
+  { src: "/images/facility/facility4.jpg", alt: "Facility" },
+  { src: "/images/facility/facility5.jpg", alt: "Facility" },
+  { src: "/images/facility/facility6.jpg", alt: "Facility" },
+  { src: "/images/facility/facility7.jpg", alt: "Facility" },
+  { src: "/images/facility/facility8.jpg", alt: "Facility" },
+  { src: "/images/facility/facility9.jpg", alt: "Facility" },
+  { src: "/images/facility/facility10.jpg", alt: "Facility" },
+  { src: "/images/facility/facility11.jpg", alt: "Facility" },
 ];
 
 const Hero = ({ locale = "en" }: { locale: string }) => {
