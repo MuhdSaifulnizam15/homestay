@@ -5,11 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { Button } from "../ui/button";
 
-// import SampleImg from "../../public/images/sample.jpg"
-
-// Sample images – replace with your own
 const IMAGES = [
   { src: "/images/facility/facility1.jpg", alt: "Facility" },
   { src: "/images/facility/facility2.jpg", alt: "Facility" },
@@ -28,7 +26,6 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
 
-  // const circleImages = IMAGES.slice(0, 6);
   const rowImages = IMAGES.slice(5, 9);
   const remaining = IMAGES.length - 9;
 
@@ -45,7 +42,7 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
 
 
   return (
-    <section className="relative flex flex-col items-center justify-center text-center py-10 px-4">
+    <section className="relative flex flex-col items-center justify-center text-center pt-10 pb-5 px-4">
       {/* Top text */}
       <div className="max-w-3xl">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -210,6 +207,13 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
                 Page {current + 1} of {IMAGES.length}
               </div>
 
+              <VisuallyHidden.Root>
+                <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
+                <Dialog.Description className="DialogDescription">
+                  Dialog Description
+                </Dialog.Description>
+              </VisuallyHidden.Root>
+
               <Image
                 src={IMAGES[current].src}
                 alt={IMAGES[current].alt}
@@ -217,13 +221,6 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
                 height={600}
                 className="object-contain max-h-[80vh] rounded-lg"
               />
-
-              {/* Close */}
-              <Dialog.Close asChild>
-                <button className="absolute top-4 right-4 bg-background/70 rounded-full p-2 shadow">
-                  <X />
-                </button>
-              </Dialog.Close>
 
               {/* Prev */}
               <button
@@ -240,6 +237,15 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
               >
                 <ChevronRight />
               </button>
+
+              <Dialog.Close asChild>
+                <button
+                  className="absolute top-4 right-4 bg-background/70 rounded-full p-2 shadow"
+                  aria-label="Close"
+                >
+                  <X />
+                </button>
+              </Dialog.Close>
             </div>
           </Dialog.Content>
         </Dialog.Portal>
