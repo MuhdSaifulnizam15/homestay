@@ -5,7 +5,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import * as Dialog from "@radix-ui/react-dialog";
 import Image from "next/image";
 import { ATTRACTIONS } from "@/constants";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const Attraction = () => {
@@ -41,8 +41,14 @@ const Attraction = () => {
               className="border rounded-lg shadow-sm overflow-hidden"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="w-full text-left px-4 py-3 bg-gray-100 hover:bg-gray-200 font-medium text-lg">
+                <Accordion.Trigger className="flex w-full items-center justify-between text-left px-4 py-3 bg-gray-100 hover:bg-gray-200 font-medium text-lg transition">
                   {category.category}
+                  <ChevronDown
+                    className="
+                      h-5 w-5 transition-transform duration-200 
+                      radix-state-open:rotate-180
+                    "
+                  />
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content className="p-4 space-y-6 bg-white">
