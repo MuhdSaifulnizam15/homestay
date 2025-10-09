@@ -450,72 +450,59 @@ export const ATTRACTIONS: AttractionCategory[] = [
       },
     ],
   },
-  // {
-  //   category: "Family & Leisure",
-  //   items: [
-  //     {
-  //       name: "Mini Zoo Taman Teruntum",
-  //       location: "Jeram, Besut",
-  //       description:
-  //         "A small family-friendly zoo and recreational park with various local animals and green spaces.",
-  //       distance: "10 km",
-  //       operationHours: "9:00 AM – 6:00 PM",
-  //       images: ["/images/mini_zoo1.jpg", "/images/mini_zoo2.jpg"],
-  //     },
-  //     {
-  //       name: "Bukit Keluang",
-  //       location: "Besut, Terengganu",
-  //       description:
-  //         "Famous hiking spot with breathtaking sunrise and sea views. Offers both trekking trails and a beach area.",
-  //       distance: "18 km",
-  //       operationHours: "6:00 AM – 7:00 PM",
-  //       images: [
-  //         "/images/bukit_keluang1.jpg",
-  //         "/images/bukit_keluang2.jpg",
-  //         "/images/bukit_keluang3.jpg",
-  //       ],
-  //     },
-  //     {
-	//       name: "La Hot Spring",
-	//       location: "Hulu Besut, Terengganu",
-	//       description:
-	//         "Natural hot spring with pools for relaxation. Popular with families and locals.",
-	//       distance: "28 km from Gong Medang (~35 min drive)",
-	//       operationHours: "8:00 AM – 6:00 PM",
-	//       images: ["/images/attractions/la-hot-spring-1.jpg"],
-	//     },
-  //   ],
-  // },
-  // {
-  //   category: "Shopping & Local Experience",
-  //   items: [
-  //     {
-  //       name: "Pasar Jerteh",
-  //       location: "Jerteh town",
-  //       description:
-  //         "Bustling local market selling fresh seafood, vegetables, and Terengganu delicacies. Best place for local snacks.",
-  //       distance: "12 km",
-  //       operationHours: "7:00 AM – 6:00 PM",
-  //       images: ["/images/pasar_jerteh1.jpg", "/images/pasar_jerteh2.jpg"],
-  //     },
-  //     {
-  //       name: "Pasar Payang 2 (Kuala Besut)",
-  //       location: "Kuala Besut",
-  //       description:
-  //         "Popular spot for buying batik, keropok lekor, and local handicrafts. Great for souvenirs before visiting islands.",
-  //       distance: "15 km",
-  //       operationHours: "9:00 AM – 7:00 PM",
-  //       images: ["/images/pasar_payang_besut1.jpg"],
-  //     },
-  //     {
-  //       name: "Warung Ikan Celup Tepung (ICT) Kuala Besut",
-  //       location: "Kuala Besut, Terengganu",
-  //       description:
-  //         "A must-try local food spot serving fried seafood dipped in flour batter, enjoyed with sea view.",
-  //       distance: "15 km",
-  //       operationHours: "3:00 PM – 11:00 PM",
-  //       images: ["/images/ict_besut1.jpg", "/images/ict_besut2.jpg"],
-  //     },
-  //   ],
-  // },
+  {
+    category: "Family & Leisure",
+    items: [
+      {
+        name: "Bukit Keluang",
+        location: "Besut, Terengganu",
+        description:
+          "Famous hiking spot with breathtaking sunrise and sea views. Offers both trekking trails and a beach area.",
+        distance: "18 km",
+        operationHours: "6:00 AM – 7:00 PM",
+        images: [
+          "/images/attractions/bukit_kluang1.jpg",
+          "/images/attractions/bukit_kluang2.jpg",
+          "/images/attractions/bukit_kluang3.jpg",
+        ],
+      },
+      {
+	      name: "La Hot Spring",
+	      location: "Hulu Besut, Terengganu",
+	      description:
+	        "Natural hot spring with pools for relaxation. Popular with families and locals.",
+	      distance: "28 km from Gong Medang (~35 min drive)",
+	      operationHours: "8:00 AM – 6:00 PM",
+	      images: [
+          "/images/attractions/la_hot_spring1.jpg",
+          "/images/attractions/la_hot_spring2.jpg",
+          "/images/attractions/la_hot_spring3.jpg",
+          "/images/attractions/la_hot_spring4.jpg",
+        ],
+	    },
+    ],
+  },
+  {
+    category: "Shopping & Local Experience",
+    items: [
+      {
+        name: "Pasar Jerteh",
+        location: "Jerteh town",
+        description:
+          "Bustling local market selling fresh seafood, vegetables, and Terengganu delicacies. Best place for local snacks.",
+        distance: "12 km",
+        operationHours: "7:00 AM – 6:00 PM",
+        images: [],
+      },
+      {
+        name: "Warung Ikan Celup Tepung (ICT) Kuala Besut",
+        location: "Kuala Besut, Terengganu",
+        description:
+          "A must-try local food spot serving fried seafood dipped in flour batter, enjoyed with sea view.",
+        distance: "15 km",
+        operationHours: "3:00 PM – 11:00 PM",
+        images: ["/images/attractions/ict1.jpg", "/images/attractions/ict2.jpg"],
+      },
+    ],
+  },
 ];
