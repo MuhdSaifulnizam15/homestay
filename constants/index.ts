@@ -506,3 +506,54 @@ export const ATTRACTIONS: AttractionCategory[] = [
     ],
   },
 ];
+
+export const TESTIMONIALS = [
+  {
+    name: "Aisyah",
+    location: "Kuala Lumpur",
+    feedback:
+      "Lovely stay! The house was clean and cozy, and the location was perfect.",
+  },
+  {
+    name: "Hafiz",
+    location: "Johor",
+    feedback:
+      "Great hospitality. Facilities are complete and very family friendly.",
+  },
+  {
+    name: "Mei Ling",
+    location: "Singapore",
+    feedback:
+      "We enjoyed the peaceful environment. Highly recommended for weekend getaways.",
+  },
+  {
+    name: "Aiman",
+    location: "Kok Lanas",
+    feedback: "Lovely stay and great hospitality!",
+  },
+  {
+    name: "Farah",
+    location: "Kuala Berang",
+    feedback: "The rooms were clean and comfortable.",
+  },
+  {
+    name: "Hafiz",
+    location: "Kerteh",
+    feedback: "Amazing view and peaceful environment.",
+  },
+  {
+    name: "Nurul",
+    location: "Puchong",
+    feedback: "Staff were friendly and helpful.",
+  },
+  {
+    name: "Faiz",
+    location: "Batu Pahat",
+    feedback: "Highly recommended for families!",
+  },
+  {
+    name: "Liyana",
+    location: "Pasir Mas",
+    feedback: "Great location and very cozy space.",
+  },
+];
