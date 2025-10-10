@@ -1,12 +1,38 @@
 {
-  "header": {
-    "title": "Laman Cik De"
+  "attraction": {
+    "distance": "Jarak",
+    "operationHour": "Masa Operasi",
+    "title": "Tempat Menarik Berdekatan"
   },
-  "home": {
-    "title": "Rasai penginapan di homestay kami"
+  "facility": {
+    "more": "more",
+    "showLess": "Show less",
+    "title": "Fasiliti"
+  },
+  "faq": {
+    "description": "Semua yang anda perlu tahu untuk menginap di sini. Cari berdasarkan kategori.",
+    "more": "more",
+    "showLess": "Show less",
+    "title": "Soalan Lazim"
   },
   "footer": {
     "copyright": "Hak Cipta Terpelihara",
     "name": "Laman Cik De"
+  },
+  "header": {
+    "title": "Laman Cik De"
+  },
+  "hero": {
+    "checkAvailability": "Semak Kekosongan",
+    "description": "Penginapan selesa anda di tengah-tengah Kampung Raja, Besut. Bersantai, terokai dan nikmati.",
+    "pageOf": "Halaman @NUM dari @TOTAL",
+    "seeFacility": "Lihat fasiliti",
+    "title": "Selamat Datang ke Homestay kami"
+  },
+  "home": {
+    "title": "Rasai penginapan di homestay kami"
+  },
+  "testimonial": {
+    "title": "Apa Kata Tetamu Kami"
   }
 }

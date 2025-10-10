@@ -1,12 +1,38 @@
 {
-  "header": {
-    "title": "Laman Germs"
+  "attraction": {
+    "distance": "Distance",
+    "operationHour": "Operation Hours",
+    "title": "Nearby Attractions"
   },
-  "home": {
-    "title": "Feel the comfort at our homestay"
+  "facility": {
+    "more": "more",
+    "showLess": "Show less",
+    "title": "Facilities"
+  },
+  "faq": {
+    "description": "Everything you need to know before your stay. Browse through by category.",
+    "more": "more",
+    "showLess": "Show less",
+    "title": "Frequently Asked Questions"
   },
   "footer": {
     "copyright": "Copyright",
     "name": "Laman Cik De"
+  },
+  "header": {
+    "title": "Laman Cik De"
+  },
+  "hero": {
+    "checkAvailability": "Check Availability",
+    "description": "Your cozy getaway in the heart of Kampung Raja, Besut. Relax, explore, and enjoy.",
+    "pageOf": "Page @NUM of @TOTAL",
+    "seeFacility": "See Facilities",
+    "title": "Welcome to Our Homestay"
+  },
+  "home": {
+    "title": "Feel the comfort at our homestay"
+  },
+  "testimonial": {
+    "title": "What Our Guests Say"
   }
 }

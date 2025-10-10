@@ -4,9 +4,19 @@ import { useState, useRef } from "react";
 import { TESTIMONIALS } from "@/constants";
 import { Button } from "../ui/button";
 
-const Testimonial = () => {
+type HeaderProps = {
+  translation: {
+    testimonial: {
+      title: string;
+    };
+  };
+};
+
+const Testimonial = ({ translation }: HeaderProps) => {
   const [visibleCount, setVisibleCount] = useState(3);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const { title } = translation.testimonial;
 
   const handleShowMore = () => {
     setVisibleCount((prev) =>
@@ -28,7 +38,7 @@ const Testimonial = () => {
       className="py-16 px-6 bg-muted/30"
     >
       <h2 className="text-3xl font-bold mb-8 text-center">
-        What Our Guests Say
+        {title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">

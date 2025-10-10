@@ -7,27 +7,30 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { Button } from "../ui/button";
+import { FACILITY_IMG } from "@/constants";
+import { Locale } from "@/types";
 
-const IMAGES = [
-  { src: "/images/facility/facility1.jpg", alt: "Facility" },
-  { src: "/images/facility/facility2.jpg", alt: "Facility" },
-  { src: "/images/facility/facility3.jpg", alt: "Facility" },
-  { src: "/images/facility/facility4.jpg", alt: "Facility" },
-  { src: "/images/facility/facility5.jpg", alt: "Facility" },
-  { src: "/images/facility/facility6.jpg", alt: "Facility" },
-  { src: "/images/facility/facility7.jpg", alt: "Facility" },
-  { src: "/images/facility/facility8.jpg", alt: "Facility" },
-  { src: "/images/facility/facility9.jpg", alt: "Facility" },
-  { src: "/images/facility/facility10.jpg", alt: "Facility" },
-  { src: "/images/facility/facility11.jpg", alt: "Facility" },
-];
+type HeroProps = {
+  translation: {
+    hero: {
+      title: string;
+      description: string;
+      seeFacility: string;
+      checkAvailability: string;
+      pageOf: string;
+    },
+  },
+  locale: Locale;
+};
 
-const Hero = ({ locale = "en" }: { locale: string }) => {
+const Hero = ({ translation, locale = 'en' }: HeroProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
 
-  const rowImages = IMAGES.slice(5, 9);
-  const remaining = IMAGES.length - 9;
+  const { title, description, seeFacility, checkAvailability, pageOf } = translation.hero;
+
+  const rowImages = FACILITY_IMG.slice(5, 9);
+  const remaining = FACILITY_IMG.length - 9;
 
   const openModal = (index: number) => {
     setCurrent(index);
@@ -35,10 +38,10 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
   };
 
   const prev = () =>
-    setCurrent((prev) => (prev === 0 ? IMAGES.length - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? FACILITY_IMG.length - 1 : prev - 1));
 
   const next = () =>
-    setCurrent((prev) => (prev === IMAGES.length - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev === FACILITY_IMG.length - 1 ? 0 : prev + 1));
 
 
   return (
@@ -46,18 +49,17 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
       {/* Top text */}
       <div className="max-w-3xl">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          Welcome to Our Homestay
+          {title}
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Your cozy getaway in the heart of Kampung Raja, Besut. Relax,
-          explore, and enjoy.
+          {description}
         </p>
         <div className="mt-6 flex justify-center gap-4">
           <Button asChild>
-            <a href="#facilities">See Facilities</a>
+            <a href="#facilities">{seeFacility}</a>
           </Button>
           <Button variant="outline" asChild>
-            <Link href={`/${locale}/availability`}>Check Availability</Link>
+            <Link href={`/${locale}/availability`}>{checkAvailability}</Link>
           </Button>
         </div>
       </div>
@@ -69,8 +71,8 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
         {/* Top-left wide */}
         <div className="col-span-2 row-span-1 relative">
           <Image
-            src={IMAGES[0].src}
-            alt={IMAGES[0].alt}
+            src={FACILITY_IMG[0].src}
+            alt={FACILITY_IMG[0].alt}
             fill
             className="object-cover cursor-pointer"
             onClick={() => openModal(0)}
@@ -80,8 +82,8 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
         {/* Top-right small */}
         <div className="col-span-1 row-span-1 relative">
           <Image
-            src={IMAGES[1].src}
-            alt={IMAGES[1].alt}
+            src={FACILITY_IMG[1].src}
+            alt={FACILITY_IMG[1].alt}
             fill
             className="object-cover cursor-pointer"
             onClick={() => openModal(1)}
@@ -91,8 +93,8 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
         {/* Bottom-left small */}
         <div className="col-span-1 row-span-1 relative">
           <Image
-            src={IMAGES[2].src}
-            alt={IMAGES[2].alt}
+            src={FACILITY_IMG[2].src}
+            alt={FACILITY_IMG[2].alt}
             fill
             className="object-cover cursor-pointer"
             onClick={() => openModal(2)}
@@ -102,8 +104,8 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
         {/* Bottom-middle tall */}
         <div className="col-span-1 row-span-1 relative">
           <Image
-            src={IMAGES[3].src}
-            alt={IMAGES[3].alt}
+            src={FACILITY_IMG[3].src}
+            alt={FACILITY_IMG[3].alt}
             fill
             className="object-cover cursor-pointer"
             onClick={() => openModal(3)}
@@ -113,8 +115,8 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
         {/* Bottom-right wide */}
         <div className="col-span-1 row-span-1 relative">
           <Image
-            src={IMAGES[4].src}
-            alt={IMAGES[4].alt}
+            src={FACILITY_IMG[4].src}
+            alt={FACILITY_IMG[4].alt}
             fill
             className="object-cover cursor-pointer"
             onClick={() => openModal(4)}
@@ -147,8 +149,8 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
           (
             <div className="relative aspect-square">
               <Image
-                src={IMAGES[9].src} // the 10th image
-                alt={IMAGES[9].alt}
+                src={FACILITY_IMG[9].src} // the 10th image
+                alt={FACILITY_IMG[9].alt}
                 fill
                 className="object-cover rounded-lg cursor-pointer"
                 onClick={() => openModal(9)}
@@ -164,7 +166,7 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {IMAGES.map((img, i) => (
+          {FACILITY_IMG.map((img, i) => (
             <div key={i} className="min-w-full relative h-64">
               <Image
                 src={img.src}
@@ -204,19 +206,19 @@ const Hero = ({ locale = "en" }: { locale: string }) => {
             <div className="relative w-full max-w-5xl flex items-center justify-center">
               {/* Index counter */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-background/70 px-3 py-1 rounded-full text-sm font-medium shadow">
-                Page {current + 1} of {IMAGES.length}
+                {pageOf.replace('@NUM', (current + 1).toString()).replace('@TOTAL', (FACILITY_IMG.length).toString())}
               </div>
 
               <VisuallyHidden.Root>
-                <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
+                {/* <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
                 <Dialog.Description className="DialogDescription">
                   Dialog Description
-                </Dialog.Description>
+                </Dialog.Description> */}
               </VisuallyHidden.Root>
 
               <Image
-                src={IMAGES[current].src}
-                alt={IMAGES[current].alt}
+                src={FACILITY_IMG[current].src}
+                alt={FACILITY_IMG[current].alt}
                 width={1000}
                 height={600}
                 className="object-contain max-h-[80vh] rounded-lg"

@@ -5,9 +5,22 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 import { FACILITIES } from "@/constants";
 import { Locale } from "@/types";
 
-const Facility = ({ locale }: { locale: Locale }) => {
+type FacilityProps = {
+  translation: {
+    facility: {
+      title: string;
+      more: string;
+      showLess: string;
+    };
+  },
+  locale: Locale;
+};
+
+const Facility = ({ translation, locale }: FacilityProps) => {
   const [showAll, setShowAll] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+
+  const { title, more, showLess } = translation.facility;
 
   // Detect desktop size
   useEffect(() => {
@@ -27,7 +40,7 @@ const Facility = ({ locale }: { locale: Locale }) => {
     <section className="w-full py-8 px-4 md:px-8 lg:px-16" id="facilities">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-          Facilities
+          {title}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {visibleFacilities.map((facility, i) => {
@@ -66,7 +79,7 @@ const Facility = ({ locale }: { locale: Locale }) => {
               onClick={() => setShowAll(true)}
               className="col-span-full flex justify-center"
             >
-              <span className="text-sm font-medium text-primary">+{remainingCount} more</span>
+              <span className="text-sm font-medium text-primary">{`+${remainingCount} ${more}`}</span>
             </div>
           )}
 
@@ -75,7 +88,7 @@ const Facility = ({ locale }: { locale: Locale }) => {
               onClick={() => setShowAll(false)}
               className="col-span-full flex justify-center"
             >
-              <span className="text-sm font-medium text-primary">Show less</span>
+              <span className="text-sm font-medium text-primary">{showLess}</span>
             </div>
           )}
         </div>
