@@ -8,10 +8,22 @@ import { ATTRACTIONS } from "@/constants";
 import { ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
-const Attraction = () => {
+type AttractionProps = {
+  translation: {
+    attraction: {
+      title: string;
+      distance: string;
+      operationHour: string;
+    };
+  };
+};
+
+const Attraction = ({ translation }: AttractionProps) => {
   const [open, setOpen] = useState(false);
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const { title, distance, operationHour } = translation.attraction;
 
   const openGallery = (imgs: string[], idx: number) => {
     setImages(imgs);
@@ -27,7 +39,7 @@ const Attraction = () => {
 
   return (
     <section className="py-16 px-6 bg-muted/30" id="attractions">
-      <h2 className="text-3xl font-bold mb-8 text-center">Nearby Attractions</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center">{title}</h2>
       <div className="w-full max-w-4xl mx-auto">
         <Accordion.Root
           type="single"
@@ -85,11 +97,11 @@ const Attraction = () => {
                         {attraction.description}
                       </p>
                       <p className="text-sm">
-                        <span className="font-medium">Distance:</span>{" "}
+                        <span className="font-medium">{`${distance}:`}</span>{" "}
                         {attraction.distance}
                       </p>
                       <p className="text-sm">
-                        <span className="font-medium">Operation Hours:</span>{" "}
+                        <span className="font-medium">{`${operationHour}:`}</span>{" "}
                         {attraction.operationHours}
                       </p>
                     </div>
@@ -110,10 +122,10 @@ const Attraction = () => {
               aria-label="Image gallery"
             >
               <VisuallyHidden.Root>
-                <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
+                {/* <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
                 <Dialog.Description className="DialogDescription">
                   Dialog Description
-                </Dialog.Description>
+                </Dialog.Description> */}
               </VisuallyHidden.Root>
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Prev */}

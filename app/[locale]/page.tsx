@@ -22,13 +22,13 @@ export default async function Home({
         <Header translation={translation} />
 
         <div className="flex-1 flex flex-col gap-10 max-w-5xl p-5">
-          <Hero locale={locale} />
+          <Hero locale={locale} translation={translation} />
           
           <main className="flex-1 flex flex-col px-4">
-            <Facility locale={locale} />
-            <Attraction />
-            <Testimonial />
-            <Faq locale={locale} />
+            <Facility locale={locale} translation={translation} />
+            <Attraction translation={translation} />
+            <Testimonial translation={translation} />
+            <Faq locale={locale} translation={translation} />
           </main>
         </div>
 

@@ -557,3 +557,17 @@ export const TESTIMONIALS = [
     feedback: "Great location and very cozy space.",
   },
 ];
+
+export const FACILITY_IMG = [
+  { src: "/images/facility/facility1.jpg", alt: "Facility 1" },
+  { src: "/images/facility/facility2.jpg", alt: "Facility 2" },
+  { src: "/images/facility/facility3.jpg", alt: "Facility 3" },
+  { src: "/images/facility/facility4.jpg", alt: "Facility 4" },
+  { src: "/images/facility/facility5.jpg", alt: "Facility 5" },
+  { src: "/images/facility/facility6.jpg", alt: "Facility 6" },
+  { src: "/images/facility/facility7.jpg", alt: "Facility 7" },
+  { src: "/images/facility/facility8.jpg", alt: "Facility 8" },
+  { src: "/images/facility/facility9.jpg", alt: "Facility 9" },
+  { src: "/images/facility/facility10.jpg", alt: "Facility 10" },
+  { src: "/images/facility/facility11.jpg", alt: "Facility 11" },
+]

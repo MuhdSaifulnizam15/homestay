@@ -6,9 +6,23 @@ import { Plus } from "lucide-react";
 import { FAQS_BY_CATEGORY } from "@/constants";
 import { Locale } from "@/types";
 
-const Faq = ({ locale }: { locale: Locale }) => {
+type FaqProps = {
+  translation: {
+    faq: {
+      title: string;
+      description: string;
+      more: string;
+      showLess: string;
+    };
+  },
+  locale: Locale;
+};
+
+const Faq = ({ translation, locale }: FaqProps) => {
   const [showAll, setShowAll] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+
+  const { title, description, more, showLess } = translation.faq;
 
   // Detect desktop breakpoint
   useEffect(() => {
@@ -29,9 +43,9 @@ const Faq = ({ locale }: { locale: Locale }) => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 sm:gap-6">
         {/* Left section (title) */}
         <div className="flex flex-col text-center lg:text-left lg:col-span-1">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground">
-            Everything you need to know before your stay. Browse through by category.
+            {description}
           </p>
         </div>
 
@@ -79,14 +93,14 @@ const Faq = ({ locale }: { locale: Locale }) => {
                   onClick={() => setShowAll(true)}
                   className="text-primary font-medium border border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl px-6 py-2 bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition"
                 >
-                  +{remainingCount} more
+                  {`+${remainingCount} ${more}`}
                 </button>
               ) : (
                 <button
                   onClick={() => setShowAll(false)}
                   className="text-primary font-medium border border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl px-6 py-2 bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition"
                 >
-                  Show less
+                  {showLess}
                 </button>
               )}
             </div>
