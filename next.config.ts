@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     "@fullcalendar/react",
     "@fullcalendar/core",
     "@fullcalendar/daygrid",
-  ],
+  ]
 };
 
 export default nextConfig;

@@ -1,7 +1,30 @@
 import { updateSession } from "@/lib/supabase/middleware";
 import { type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Skip Next.js internals, static files, and images
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.includes(".")
+  ) {
+    return await updateSession(request);
+  }
+
+  // Check if path includes a supported locale
+  const hasLocale = /^\/(en|ms)(\/|$)/.test(pathname);
+
+  if (!hasLocale) {
+    const defaultLocale = "en";
+    const url = request.nextUrl.clone();
+    url.pathname = `/${defaultLocale}${pathname}`;
+    return NextResponse.redirect(url);
+  }
+
+  // Otherwise continue with Supabase session update
   return await updateSession(request);
 }
 
