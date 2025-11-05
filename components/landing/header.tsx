@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ThemeSwitcher } from "@/components/landing/theme-switcher";
+// import { ThemeSwitcher } from "@/components/landing/theme-switcher";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
 
 type HeaderProps = {
@@ -29,7 +29,7 @@ const Header = ({ translation }: HeaderProps) => {
         </div>
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
         </div>
       </div>
     </nav>
