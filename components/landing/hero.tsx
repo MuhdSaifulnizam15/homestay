@@ -210,10 +210,10 @@ const Hero = ({ translation, locale = 'en' }: HeroProps) => {
               </div>
 
               <VisuallyHidden.Root>
-                {/* <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
+                <Dialog.Title className="DialogTitle">Dialog Title</Dialog.Title>
                 <Dialog.Description className="DialogDescription">
                   Dialog Description
-                </Dialog.Description> */}
+                </Dialog.Description>
               </VisuallyHidden.Root>
 
               <Image
