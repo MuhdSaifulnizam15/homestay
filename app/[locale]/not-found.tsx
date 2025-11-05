@@ -17,9 +17,9 @@ import { getLocale } from "./locales";
 export default async function NotFound({
   params,
 }: {
-  params: Promise<{ locale: Locale }>
+  params: { locale: Locale }
 }) {
-  const { locale } = await params
+  const { locale } = params
   const translation = await getLocale(locale)
   const { title, description, goBackHome, copyright, name } = translation.notFound;
 
@@ -29,7 +29,7 @@ export default async function NotFound({
       <h2 className="text-2xl font-semibold mb-2">{title}</h2>
       <p className="max-w-md text-gray-600 mb-6">{description}</p>
       <Link
-        href="/en"
+        href={`/${locale}`}
         className="px-5 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
       >
         {goBackHome}
