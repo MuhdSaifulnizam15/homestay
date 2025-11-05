@@ -1,18 +1,26 @@
+import { Locale } from "@/types";
 import Link from "next/link";
+import { getLocale } from "./locales";
 
-type NotFoundProps = {
-  translation: {
-    notFound: {
-      title: string;
-      description: string;
-      name: string;
-      goBackHome: string;
-      copyright: string;
-    };
-  };
-};
+// type NotFoundProps = {
+//   translation: {
+//     notFound: {
+//       title: string;
+//       description: string;
+//       name: string;
+//       goBackHome: string;
+//       copyright: string;
+//     };
+//   };
+// };
 
-export default function NotFound({ translation }: NotFoundProps) {
+export default async function NotFound({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>
+}) {
+  const { locale } = await params
+  const translation = await getLocale(locale)
   const { title, description, goBackHome, copyright, name } = translation.notFound;
 
   return (

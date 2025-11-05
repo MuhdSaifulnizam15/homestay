@@ -1,18 +1,26 @@
+import { Locale } from "@/types";
 import Link from "next/link";
+import { getLocale } from "../locales";
 
-type MaintenanceProps = {
-  translation: {
-    maintenance: {
-      title: string;
-      description: string;
-      name: string;
-      goBackHome: string;
-      copyright: string;
-    };
-  };
-};
+// type MaintenanceProps = {
+//   translation: {
+//     maintenance: {
+//       title: string;
+//       description: string;
+//       name: string;
+//       goBackHome: string;
+//       copyright: string;
+//     };
+//   };
+// };
 
-export default function MaintenancePage({ translation }: MaintenanceProps) {
+export default async function MaintenancePage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>
+}) {
+  const { locale } = await params
+  const translation = await getLocale(locale)
   const { title, description, goBackHome, copyright, name } = translation.maintenance;
 
   return (
@@ -22,7 +30,7 @@ export default function MaintenancePage({ translation }: MaintenanceProps) {
         {description}
       </p>
       <Link
-        href="/en"
+        href={`/${locale}`}
         className="px-5 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
       >
         {goBackHome}

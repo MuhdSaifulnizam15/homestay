@@ -4,14 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-
-  // --- Block or redirect availability ---
-  if (/^\/(en|ms)\/availability(\/|$)?/.test(pathname)) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/maintenance";
-    return NextResponse.redirect(url);
-  }
-
+  
   // Skip Next.js internals, static files, and images
   if (
     pathname.startsWith("/_next") ||
@@ -19,6 +12,17 @@ export async function middleware(request: NextRequest) {
     pathname.includes(".")
   ) {
     return await updateSession(request);
+  }
+
+  // --- Detect locale ---
+  const localeMatch = pathname.match(/^\/(en|ms)(\/|$)/);
+  const locale = localeMatch ? localeMatch[1] : "en";
+
+  // --- Block or redirect availability ---
+  if (/^\/(en|ms)\/availability(\/|$)?/.test(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}/maintenance`;
+    return NextResponse.redirect(url);
   }
 
   // Check if path includes a supported locale
