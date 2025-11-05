@@ -27,6 +27,7 @@
     "description": "Penginapan selesa anda di tengah-tengah Kampung Raja, Besut. Bersantai, terokai dan nikmati.",
     "pageOf": "Halaman @NUM dari @TOTAL",
     "seeFacility": "Lihat fasiliti",
+    "seeFaqs": "Lihat FAQs",
     "title": "Selamat Datang ke Homestay kami"
   },
   "home": {
@@ -34,5 +35,19 @@
   },
   "testimonial": {
     "title": "Apa Kata Tetamu Kami"
+  },
+  "notFound": {
+    "title": "Halaman Tidak Dijumpai",
+    "description": "Maaf, halaman yang anda cari tidak dapat dijumpai. Ia mungkin telah dipindahkan, dinamakan semula, atau tidak tersedia buat sementara waktu.",
+    "goBackHome": "Kembali ke Laman Utama",
+    "copyright": "Hak cipta terpelihara.",
+    "name": "Laman Cik De"
+  },
+  "maintenance": {
+    "title": "Halaman Dalam Penyelenggaraan",
+    "description": "Kami sedang melakukan penambahbaikan untuk memberikan pengalaman yang lebih baik kepada anda. Sila kembali semula kemudian — halaman ini akan tersedia tidak lama lagi.",
+    "goBackHome": "Kembali ke Laman Utama",
+    "copyright": "Hak cipta terpelihara.",
+    "name": "Laman Cik De"
   }
 }

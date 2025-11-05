@@ -39,7 +39,7 @@ const Faq = ({ translation, locale }: FaqProps) => {
   const remainingCount = FAQS_BY_CATEGORY.length - 3;
 
   return (
-    <section className="w-full py-8 px-4 md:px-8 lg:px-16">
+    <section className="w-full py-8 px-4 md:px-8 lg:px-16" id="faqs">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 sm:gap-6">
         {/* Left section (title) */}
         <div className="flex flex-col text-center lg:text-left lg:col-span-1">

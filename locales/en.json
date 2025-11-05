@@ -27,6 +27,7 @@
     "description": "Your cozy getaway in the heart of Kampung Raja, Besut. Relax, explore, and enjoy.",
     "pageOf": "Page @NUM of @TOTAL",
     "seeFacility": "See Facilities",
+    "seeFaqs": "See FAQs",
     "title": "Welcome to Our Homestay"
   },
   "home": {
@@ -34,5 +35,19 @@
   },
   "testimonial": {
     "title": "What Our Guests Say"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn’t find the page you’re looking for. It might have been moved, renamed, or is temporarily unavailable.",
+    "goBackHome": "Go Back Home",
+    "copyright": "All rights reserved.",
+    "name": "Laman Cik De"
+  },
+  "maintenance": {
+    "title": "Page Under Maintenance",
+    "description": "We’re currently working to improve this page to serve you better. Please check back later — it’ll be available again soon.",
+    "goBackHome": "Go Back Home",
+    "copyright": "All rights reserved.",
+    "name": "Laman Cik De"
   }
 }

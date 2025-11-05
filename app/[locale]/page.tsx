@@ -22,7 +22,7 @@ export default async function Home({
         <Header translation={translation} />
 
         <div className="flex-1 flex flex-col gap-10 max-w-5xl p-5">
-          <Hero locale={locale} translation={translation} />
+          <Hero /* locale={locale} */ translation={translation} />
           
           <main className="flex-1 flex flex-col px-4">
             <Facility locale={locale} translation={translation} />

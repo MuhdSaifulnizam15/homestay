@@ -5,6 +5,13 @@ import { NextResponse } from "next/server";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // --- Block or redirect availability ---
+  if (/^\/(en|ms)\/availability(\/|$)?/.test(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/maintenance";
+    return NextResponse.redirect(url);
+  }
+
   // Skip Next.js internals, static files, and images
   if (
     pathname.startsWith("/_next") ||

@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { Button } from "../ui/button";
 import { FACILITY_IMG } from "@/constants";
-import { Locale } from "@/types";
+// import { Locale } from "@/types";
 
 type HeroProps = {
   translation: {
@@ -16,18 +16,19 @@ type HeroProps = {
       title: string;
       description: string;
       seeFacility: string;
-      checkAvailability: string;
+      // checkAvailability: string;
+      seeFaqs: string;
       pageOf: string;
     },
   },
-  locale: Locale;
+  // locale: Locale;
 };
 
-const Hero = ({ translation, locale = 'en' }: HeroProps) => {
+const Hero = ({ translation, /* locale = 'en'  */}: HeroProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
 
-  const { title, description, seeFacility, checkAvailability, pageOf } = translation.hero;
+  const { title, description, seeFacility, /* checkAvailability, */ seeFaqs, pageOf } = translation.hero;
 
   const rowImages = FACILITY_IMG.slice(5, 9);
   const remaining = FACILITY_IMG.length - 9;
@@ -59,8 +60,11 @@ const Hero = ({ translation, locale = 'en' }: HeroProps) => {
             <a href="#facilities">{seeFacility}</a>
           </Button>
           <Button variant="outline" asChild>
-            <Link href={`/${locale}/availability`}>{checkAvailability}</Link>
+            <a href="#faqs">{seeFaqs}</a>
           </Button>
+          {/* <Button variant="outline" asChild>
+            <Link href={`/${locale}/availability`}>{checkAvailability}</Link>
+          </Button> */}
         </div>
       </div>
 
