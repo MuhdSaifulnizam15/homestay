@@ -1,6 +1,7 @@
 import { updateSession } from "@/lib/supabase/middleware";
 import { type NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+// import { validRoutes } from "./constants/routes";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -16,7 +17,7 @@ export async function middleware(request: NextRequest) {
 
   // --- Detect locale ---
   const localeMatch = pathname.match(/^\/(en|ms)(\/|$)/);
-  const locale = localeMatch ? localeMatch[1] : "en";
+  const locale = localeMatch ? localeMatch[1] : "ms";
 
   // --- Block or redirect availability ---
   if (/^\/(en|ms)\/availability(\/|$)?/.test(pathname)) {
@@ -29,11 +30,20 @@ export async function middleware(request: NextRequest) {
   const hasLocale = /^\/(en|ms)(\/|$)/.test(pathname);
 
   if (!hasLocale) {
-    const defaultLocale = "en";
     const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
+    url.pathname = `/${locale}${pathname}`;
     return NextResponse.redirect(url);
   }
+
+  // // Extract top-level path after locale: /en/{segment}
+  // const parts = pathname.split("/").filter(Boolean); // ["en", "something"]
+  // const route = parts[1] ?? ""; // may be empty for home
+
+  // if (!validRoutes.includes(route)) {
+  //   const url = request.nextUrl.clone();
+  //   url.pathname = `/not-found`;
+  //   return NextResponse.redirect(url);
+  // }
 
   // Otherwise continue with Supabase session update
   return await updateSession(request);
