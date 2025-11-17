@@ -17,10 +17,10 @@
   },
   "footer": {
     "copyright": "Copyright",
-    "name": "Laman Cik De"
+    "name": "Homestay Aleesa"
   },
   "header": {
-    "title": "Laman Cik De"
+    "title": "Homestay Aleesa"
   },
   "hero": {
     "checkAvailability": "Check Availability",
@@ -41,13 +41,13 @@
     "description": "Sorry, we couldn’t find the page you’re looking for. It might have been moved, renamed, or is temporarily unavailable.",
     "goBackHome": "Go Back Home",
     "copyright": "All rights reserved.",
-    "name": "Laman Cik De"
+    "name": "Homestay Aleesa"
   },
   "maintenance": {
     "title": "Page Under Maintenance",
     "description": "We’re currently working to improve this page to serve you better. Please check back later — it’ll be available again soon.",
     "goBackHome": "Go Back Home",
     "copyright": "All rights reserved.",
-    "name": "Laman Cik De"
+    "name": "Homestay Aleesa"
   }
 }

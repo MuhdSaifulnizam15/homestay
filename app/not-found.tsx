@@ -13,7 +13,7 @@ export default function NotFound() {
         Kembali ke Laman Utama
       </Link>
       <footer className="mt-10 text-s{m text-gray-500">
-        © {new Date().getFullYear()} Laman Cik De. Hak cipta terpelihara.
+        © {new Date().getFullYear()} Homestay Aleesa. Hak cipta terpelihara.
       </footer>
     </main>
   )
