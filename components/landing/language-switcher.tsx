@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
   const segments = pathname.split("/").filter(Boolean);
   const currentLocale = SUPPORTED_LOCALES.includes(segments[0])
     ? segments[0]
-    : "en";
+    : "ms";
 
   const handleChange = (locale: string) => {
     const newPath =

@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const SUPPORTED_LOCALES = ["en", "ms", "cn"];
-export const DEFAULT_LOCALE = "en";
+export const DEFAULT_LOCALE = "ms";
 
 export const HOLIDAYS = [
   // Public Holidays 2025
